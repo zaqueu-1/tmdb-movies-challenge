@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Backend BFF
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+      target: production
+    container_name: tmdb-api
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - TMDB_API_KEY=${TMDB_API_KEY}
+      - TMDB_BASE_URL=${TMDB_BASE_URL:-https://api.themoviedb.org/3}
+    networks:
+      - tmdb-network
+
+  # Frontend
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      target: production
+      args:
+        - VITE_API_BASE_URL=http://api:3001/api
+        - VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+    container_name: tmdb-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - VITE_API_BASE_URL=http://api:3001/api
+      - VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+    depends_on:
+      - api
+    networks:
+      - tmdb-network
+
+networks:
+  tmdb-network:
+    driver: bridge
+
+
