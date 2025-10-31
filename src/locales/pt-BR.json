@@ -1,0 +1,90 @@
+{
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "retry": "Tentar Novamente",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar filmes...",
+    "noResults": "Nenhum resultado encontrado",
+    "loadMore": "Carregar Mais",
+    "allMoviesLoaded": "Todos os filmes foram carregados"
+  },
+  "nav": {
+    "home": "Início",
+    "favorites": "Favoritos",
+    "search": "Busca"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "toggle": "Alternar tema"
+  },
+  "language": {
+    "select": "Selecionar idioma",
+    "pt": "Português",
+    "en": "English"
+  },
+  "movie": {
+    "rating": "Avaliação",
+    "votes": "votos",
+    "releaseDate": "Data de Lançamento",
+    "runtime": "Duração",
+    "genres": "Gêneros",
+    "overview": "Sinopse",
+    "noOverview": "Sem descrição disponível",
+    "addToFavorites": "Adicionar aos Favoritos",
+    "removeFromFavorites": "Remover dos Favoritos",
+    "viewDetails": "Ver Detalhes"
+  },
+  "home": {
+    "categories": {
+      "popular": "Populares",
+      "nowPlaying": "Em Cartaz",
+      "topRated": "Mais Bem Avaliados",
+      "upcoming": "Em Breve"
+    }
+  },
+  "favorites": {
+    "title": "Meus Favoritos",
+    "subtitle": "Filmes que você marcou como favoritos",
+    "empty": "Você ainda não tem filmes favoritos",
+    "emptyDescription": "Explore filmes e adicione seus favoritos aqui",
+    "sortBy": "Ordenar por",
+    "sortOptions": {
+      "titleAsc": "Título (A-Z)",
+      "titleDesc": "Título (Z-A)",
+      "ratingDesc": "Maior Nota",
+      "ratingAsc": "Menor Nota",
+      "dateDesc": "Mais Recente",
+      "dateAsc": "Mais Antigo"
+    }
+  },
+  "search": {
+    "title": "Resultados para: ",
+    "noResults": "Nenhum filme encontrado para \"{{query}}\"",
+    "tryAgain": "Tente buscar com outros termos"
+  },
+  "details": {
+    "backToHome": "Voltar",
+    "productionCompanies": "Empresas de Produção",
+    "spokenLanguages": "Idiomas",
+    "budget": "Orçamento",
+    "revenue": "Receita",
+    "status": "Status"
+  },
+  "errors": {
+    "generic": "Ops! Algo deu errado",
+    "network": "Erro de conexão com o servidor",
+    "notFound": "Página não encontrada",
+    "movieNotFound": "Filme não encontrado",
+    "tryAgain": "Por favor, tente novamente"
+  },
+  "toast": {
+    "addedToFavorites": "Adicionado aos favoritos!",
+    "removedFromFavorites": "Removido dos favoritos",
+    "error": "Ocorreu um erro"
+  }
+}
+
+

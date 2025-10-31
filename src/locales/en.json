@@ -1,0 +1,90 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Try Again",
+    "search": "Search",
+    "searchPlaceholder": "Search movies...",
+    "noResults": "No results found",
+    "loadMore": "Load More",
+    "allMoviesLoaded": "All movies have been loaded"
+  },
+  "nav": {
+    "home": "Home",
+    "favorites": "Favorites",
+    "search": "Search"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "select": "Select language",
+    "pt": "Português",
+    "en": "English"
+  },
+  "movie": {
+    "rating": "Rating",
+    "votes": "votes",
+    "releaseDate": "Release Date",
+    "runtime": "Runtime",
+    "genres": "Genres",
+    "overview": "Overview",
+    "noOverview": "No description available",
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "viewDetails": "View Details"
+  },
+  "home": {
+    "categories": {
+      "popular": "Popular",
+      "nowPlaying": "Now Playing",
+      "topRated": "Top Rated",
+      "upcoming": "Upcoming"
+    }
+  },
+  "favorites": {
+    "title": "My Favorites",
+    "subtitle": "Movies you've marked as favorites",
+    "empty": "You don't have any favorite movies yet",
+    "emptyDescription": "Explore movies and add your favorites here",
+    "sortBy": "Sort by",
+    "sortOptions": {
+      "titleAsc": "Title (A-Z)",
+      "titleDesc": "Title (Z-A)",
+      "ratingDesc": "Highest Rating",
+      "ratingAsc": "Lowest Rating",
+      "dateDesc": "Newest",
+      "dateAsc": "Oldest"
+    }
+  },
+  "search": {
+    "title": "Results for: ",
+    "noResults": "No movies found for \"{{query}}\"",
+    "tryAgain": "Try searching with different terms"
+  },
+  "details": {
+    "backToHome": "Back",
+    "productionCompanies": "Production Companies",
+    "spokenLanguages": "Languages",
+    "budget": "Budget",
+    "revenue": "Revenue",
+    "status": "Status"
+  },
+  "errors": {
+    "generic": "Oops! Something went wrong",
+    "network": "Connection error with server",
+    "notFound": "Page not found",
+    "movieNotFound": "Movie not found",
+    "tryAgain": "Please try again"
+  },
+  "toast": {
+    "addedToFavorites": "Added to favorites!",
+    "removedFromFavorites": "Removed from favorites",
+    "error": "An error occurred"
+  }
+}
+
+
