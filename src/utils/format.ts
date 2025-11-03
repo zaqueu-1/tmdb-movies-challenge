@@ -1,10 +1,10 @@
 
 export function formatDate(dateString: string): string {
   if (!dateString) return '';
-  
+
   const date = new Date(dateString + 'T00:00:00');
   if (isNaN(date.getTime())) return '';
-  
+
   return new Intl.DateTimeFormat('pt-BR').format(date);
 }
 
@@ -24,17 +24,18 @@ export function formatCurrencyUSD(value: number): string {
 
 export function formatRuntime(minutes: number): string {
   if (!minutes || minutes <= 0) return '';
-  
+
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;
-  
+
   if (hours === 0) return `${mins}min`;
   if (mins === 0) return `${hours}h`;
-  
+
   return `${hours}h ${mins}min`;
 }
 
 export function formatRating(rating: number): string {
+  if (rating === undefined || rating === null || isNaN(rating)) return '0.0';
   return rating.toFixed(1);
 }
 
