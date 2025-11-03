@@ -19,7 +19,11 @@ class ApiClientError extends Error {
 }
 
 async function fetchFromBFF<T>(endpoint: string, params: Record<string, string> = {}): Promise<T> {
-    const url = new URL(`${API_BASE_URL}${endpoint}`);
+    const baseUrl = API_BASE_URL.startsWith('http')
+        ? API_BASE_URL
+        : `${window.location.origin}${API_BASE_URL}`;
+
+    const url = new URL(`${baseUrl}${endpoint}`);
 
     Object.entries(params).forEach(([key, value]) => {
         url.searchParams.append(key, value);
