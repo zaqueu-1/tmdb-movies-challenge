@@ -33,23 +33,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(200).end();
     }
 
-    const { path } = req.query;
+    const url = new URL(req.url || '', `https://${req.headers.host}`);
+    const pathname = url.pathname.replace('/api/', '');
+    const pathParts = pathname.split('/').filter(Boolean);
 
     try {
-        if (path?.[0] === 'health') {
+        if (pathParts[0] === 'health') {
             return res.status(200).json({
                 status: 'ok',
                 message: 'BFF Server is running on Vercel'
             });
         }
 
-        if (path?.[0] === 'movies' && path?.[1] === 'popular') {
+        if (pathParts[0] === 'movies' && pathParts[1] === 'popular') {
             const page = (req.query.page as string) || '1';
             const data = await fetchFromTMDB('/movie/popular', { page });
             return res.status(200).json(data);
         }
 
-        if (path?.[0] === 'movies' && path?.[1] === 'search') {
+        if (pathParts[0] === 'movies' && pathParts[1] === 'search') {
             const q = req.query.q as string;
             const page = (req.query.page as string) || '1';
 
@@ -64,15 +66,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             return res.status(200).json(data);
         }
 
-        if (path?.[0] === 'movies' && path?.[1] && path?.[1] !== 'popular' && path?.[1] !== 'search') {
-            const movieId = path[1];
+        if (pathParts[0] === 'movies' && pathParts[1] && pathParts[1] !== 'popular' && pathParts[1] !== 'search') {
+            const movieId = pathParts[1];
             const data = await fetchFromTMDB(`/movie/${movieId}`);
             return res.status(200).json(data);
         }
 
         return res.status(404).json({
             success: false,
-            message: 'Route not found'
+            message: 'Route not found',
+            debug: { pathname, pathParts }
         });
 
     } catch (error) {
